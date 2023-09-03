@@ -43,20 +43,24 @@ def make_tree_node(array:List[int]):
     for idx, node in enumerate(all_nodes):
         try:
             node.left = all_nodes[2*idx + 1]
-        except:
-            node.left = None
+        except IndexError: # no child elements
+            if node is not None:
+                node.left = None 
         
         try:
             node.right = all_nodes[2*idx+2]
-        except:
-            node.right = None
-            
+        except IndexError:
+            if node is not None:
+                node.right = None
+        
     return all_nodes[0]
 
 
 if __name__ == "__main__":
     head = make_linked_list([1,2,3,4,5,6,7])
     print(head)
-    head = make_tree_node([1,2,3,4,5,6,7, 8])
+    head = make_tree_node([1,2,3,4,5,6,7,8])
     print(head)
+    root = make_tree_node([1,2,2,3,3,None,None,4,4])
+    print(root)
     
