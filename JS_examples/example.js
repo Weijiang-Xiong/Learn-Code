@@ -40,3 +40,6 @@ let admin = user;
 
 admin.name = 'Pete';
 alert(user.name); // Pete
+
+let id = Symbol('id');
+alert(id.toString());
