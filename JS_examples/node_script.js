@@ -45,3 +45,7 @@ Object.assign(user, permission1, permission2);
 let clone = structuredClone(user);
 
 console.log(user);
+
+function accessAllowed(user) {
+    return user.age > 18;
+}
